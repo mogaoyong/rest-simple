@@ -7,6 +7,7 @@ import Table from 'components/navi/navi1/Table.vue';
 import UserList from 'components/user/list.vue';
 import UserAdd from 'components/user/add.vue';
 import UserEdit from 'components/user/edit.vue';
+import DictList from 'components/dict/list.vue';
 
 Vue.use(Router);
 
@@ -28,7 +29,8 @@ let routes = [
       { path: '/table', component: Table, name: 'Table', meta: { 'text': '表格' } },
       { path: '/user/list', component: UserList, name: 'UserList', meta: { 'text': '用户管理' } },
       { path: '/user/add', component: UserAdd, name: 'UserAdd', meta: { 'text': '新增用户' } },
-      { path: '/user/edit/:id', component: UserEdit, name: 'UserEdit', meta: { 'text': '修改用户' } }
+      { path: '/user/edit/:id', component: UserEdit, name: 'UserEdit', meta: { 'text': '修改用户' } },
+      { path: '/dict/list', component: DictList, name: 'DictList', meta: { 'text': '数据字典' } }
     ]
   }
 ];

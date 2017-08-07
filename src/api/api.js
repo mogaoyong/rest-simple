@@ -32,82 +32,82 @@ export const get = (data, method, version) => {
   return fetch(data, method, 'GET', version);
 };
 /* const instance = axios.create({
-  baseURL: 'http://localhost:8080',
-  timeout: 20000,
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Accept': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest'
-  }
-});
+ baseURL: 'http://localhost:8080',
+ timeout: 20000,
+ headers: {
+ 'Content-Type': 'application/x-www-form-urlencoded',
+ 'Accept': 'application/json',
+ 'X-Requested-With': 'XMLHttpRequest'
+ }
+ });
 
-instance.interceptors.request.use((request) => {
-  if (request.data && request.headers['Content-Type'] === 'application/x-www-form-urlencoded') {
-    request.data = qs.stringify(request.data);
-  }
-  return request;
-});
+ instance.interceptors.request.use((request) => {
+ if (request.data && request.headers['Content-Type'] === 'application/x-www-form-urlencoded') {
+ request.data = qs.stringify(request.data);
+ }
+ return request;
+ });
 
-export const post = (data, method, version) => {
-  if (!version) {
-    version = defaultVersion;
-  }
-  return instance
-    .post('/router', data, {
-      params: {
-        appKey: appKey,
-        method: method,
-        v: version,
-        sessionId: sessionStorage.getItem('sessionId')
-      }
-    })
-    .catch(handleError);
-};
+ export const post = (data, method, version) => {
+ if (!version) {
+ version = defaultVersion;
+ }
+ return instance
+ .post('/router', data, {
+ params: {
+ appKey: appKey,
+ method: method,
+ v: version,
+ sessionId: sessionStorage.getItem('sessionId')
+ }
+ })
+ .catch(handleError);
+ };
 
-export const get = (method, version) => {
-  if (!version) {
-    version = defaultVersion;
-  }
-  return instance
-    .get('/router', {
-      params: {
-        appKey: appKey,
-        method: method,
-        v: version,
-        sessionId: sessionStorage.getItem('sessionId')
-      }
-    })
-    .catch(handleError);
-};
+ export const get = (method, version) => {
+ if (!version) {
+ version = defaultVersion;
+ }
+ return instance
+ .get('/router', {
+ params: {
+ appKey: appKey,
+ method: method,
+ v: version,
+ sessionId: sessionStorage.getItem('sessionId')
+ }
+ })
+ .catch(handleError);
+ };
 
-export const handleBusinessServiceError = errmsg => {
-  console.log(errmsg);
-  if (errmsg.subErrors) {
-    let msg = '';
-    errmsg.subErrors.forEach(subError => {
-      msg += subError.message;
-    });
-    Message.error(msg);
-  } else {
-    Message.error(errmsg.message);
-  };
-};
+ export const handleBusinessServiceError = errmsg => {
+ console.log(errmsg);
+ if (errmsg.subErrors) {
+ let msg = '';
+ errmsg.subErrors.forEach(subError => {
+ msg += subError.message;
+ });
+ Message.error(msg);
+ } else {
+ Message.error(errmsg.message);
+ };
+ };
 
-export const proccess = (response, callback) => {
-  let code = response.data.code;
-  if (code === '21') {
-    Message.error('登录超时，请重新登录');
-    router.push({path: '/login'});
-    return;
-  }
-  if (code !== '0') {
-    handleBusinessServiceError(response.data);
-  } else {
-    callback();
-  }
-};
-function handleError (error) {
-  console.error(error);
-  Message.error(error);
-  Promise.reject(error);
-} */
+ export const proccess = (response, callback) => {
+ let code = response.data.code;
+ if (code === '21') {
+ Message.error('登录超时，请重新登录');
+ router.push({path: '/login'});
+ return;
+ }
+ if (code !== '0') {
+ handleBusinessServiceError(response.data);
+ } else {
+ callback();
+ }
+ };
+ function handleError (error) {
+ console.error(error);
+ Message.error(error);
+ Promise.reject(error);
+ } */

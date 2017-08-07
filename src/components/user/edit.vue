@@ -190,7 +190,7 @@
               _this.editLoading = true;
               let data = await this.$api.post(params, 'user.edit');
               _this.editLoading = false;
-              if (data) {
+              if (data === 0) {
                 _this.$message({
                   message: '操作成功',
                   type: 'success'
