@@ -54,6 +54,7 @@
   import ElCol from 'element-ui/packages/col/src/col';
   import DepTree from 'components/dep-tree/dep-tree.vue';
   import PageTable from 'components/page-table/page-table.vue';
+  import Vue from 'vue';
 
   export default {
     components: {
@@ -128,7 +129,10 @@
       },
       handleNodeClick (node) {
         this.filters.departmentId = node.id;
-        this.getUsers();
+        let _this = this;
+        Vue.nextTick(function() {
+          _this.$refs.pageTable.getPage();
+        });
       },
       // 批量删除
       batchRemove: async function (ids) {

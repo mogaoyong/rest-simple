@@ -96,7 +96,6 @@
         };
 
         params = merge(params, this.extraParams);
-
         _this.listLoading = true;
         let data = await this.$api.post(params, this.method);
         _this.listLoading = false;

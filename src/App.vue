@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <transition name="fade"
-                mode="out-in">
+    <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
   </div>
@@ -34,14 +33,38 @@
     width: 100%;
   }
 
+  .el-submenu__title{
+    height: 40px;
+    line-height: 40px;
+    color: #a0a8b0;
+  }
   .el-submenu [class^=fa] {
     vertical-align: baseline;
     margin-right: 10px;
+
   }
 
+  .el-submenu {
+    .el-menu {
+      background-color: #2a3139;
+      color: #fff;
+    }
+    .el-menu-item {
+      height: 40px;
+      line-height: 40px;
+      &.is-active {
+        background-color: #08b1ff;
+        color: #fff;
+      }
+    }
+  }
   .el-menu-item [class^=fa] {
     vertical-align: baseline;
     margin-right: 10px;
+
+  }
+  .el-menu-item {
+    color: #fff;
   }
 
   .toolbar {
@@ -54,13 +77,11 @@
     }
   }
 
-  .fade-enter-active,
-  .fade-leave-active {
+  .fade-enter-active, .fade-leave-active {
     transition: all .2s ease;
   }
 
-  .fade-enter,
-  .fade-leave-active {
+  .fade-enter, .fade-leave-active {
     opacity: 0;
   }
 </style>

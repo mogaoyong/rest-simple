@@ -47,7 +47,19 @@
         </el-pagination>
       </el-col>
     </el-col>
-    <el-col :span="12"></el-col>
+    <el-col :span="12">
+      <transition name="fade" mode="out-in">
+      <div v-show="show">
+        <p>Vue 在插入、更新或者移除 DOM 时，提供多种不同方式的应用过渡效果。
+          包括以下工具：
+          在 CSS 过渡和动画中自动应用 class
+          可以配合使用第三方 CSS 动画库，如 Animate.css
+          在过渡钩子函数中使用 JavaScript 直接操作 DOM
+          可以配合使用第三方 JavaScript 动画库，如 Velocity.js
+          在这里，我们只会讲到进入、离开和列表的过渡， 你也可以看下一节的 管理过渡状态.</p>
+      </div>
+      </transition>
+    </el-col>
   </el-row>
   </section>
 </template>
@@ -70,7 +82,8 @@
         pageSize: 15, // 每页显示条目个数
         currentPage: 1, // 当前页数
         listLoading: false,
-        sels: [] //  列表选中列,
+        sels: [], //  列表选中列
+        show: false
       };
     },
     methods: {
@@ -107,6 +120,7 @@
       },
       // 显示新增界面
       handleAdd: function () {
+        this.show = !this.show;
         // this.$router.push({name: 'UserAdd'});
       },
       // 显示编辑界面
