@@ -8,6 +8,9 @@ import UserList from 'components/user/list.vue';
 import UserAdd from 'components/user/add.vue';
 import UserEdit from 'components/user/edit.vue';
 import DictList from 'components/dict/list.vue';
+import ResourceList from 'components/resource/list.vue';
+import ResourceAdd from 'components/resource/add.vue';
+import ResourceEdit from 'components/resource/edit.vue';
 
 Vue.use(Router);
 
@@ -30,6 +33,9 @@ let routes = [
       { path: '/user/list', component: UserList, name: 'UserList', meta: { 'text': '用户管理' } },
       { path: '/user/add', component: UserAdd, name: 'UserAdd', meta: { 'text': '新增用户' } },
       { path: '/user/edit/:id', component: UserEdit, name: 'UserEdit', meta: { 'text': '修改用户' } },
+      { path: '/resource/list', component: ResourceList, name: 'ResourceList', meta: { 'text': '资源管理' } },
+      { path: '/resource/add', component: ResourceAdd, name: 'ResourceAdd', meta: { 'text': '新增资源' } },
+      { path: '/resource/edit/:id', component: ResourceEdit, name: 'ResourceEdit', meta: { 'text': '修改资源' } },
       { path: '/dict/list', component: DictList, name: 'DictList', meta: { 'text': '数据字典' } }
     ]
   }

@@ -1,12 +1,12 @@
 <template>
   <section>
-    <el-row style="background:#f2f2f2;border-left:1px solid #dfe6ec;margin-top:15px;">
-      <el-col :span="4" style="overflow:auto">
-        <DepTree :render-content="renderContent" :handleNodeClick="handleNodeClick" treeClass="dep-tree"></DepTree>
+    <el-row>
+      <el-col :span="4">
+        <DepTree :render-content="renderContent" :handleNodeClick="handleNodeClick" treeClass="side-tree"></DepTree>
       </el-col>
       <el-col :span="20">
         <!-- 工具栏 -->
-        <PageTable ref="pageTable" :filters="filters" toolBarRowCls="user-toolbar-row" toolbarCls="user-toolbar" :handleAdd="handleAdd" :extraParams="extraParams" method='user.page' @data-loaded="getUsers" @batch-remove="batchRemove">
+        <PageTable ref="pageTable" :filters="filters" toolbarCls="tree-toolbar" :handleAdd="handleAdd" method='user.page' @data-loaded="getUsers" @batch-remove="batchRemove">
           <template slot="search">
             <el-form-item>
               <el-input v-model="filters.username" placeholder="用户名" style="width:130px;"></el-input>
@@ -70,19 +70,8 @@
           username: '',
           mobile: '',
           departmentId: ''
-        },
-        users: []
+        }
       };
-    },
-    computed: {
-      extraParams: function () {
-        return {
-          name: this.filters.name,
-          username: this.filters.username,
-          mobile: this.filters.mobile,
-          departmentId: this.filters.departmentId
-        };
-      }
     },
     methods: {
       //  性别显示转换
@@ -155,24 +144,4 @@
 </script>
 
 <style lang="scss">
-  .user-toolbar-row{
-    border-left:1px solid #dfe6ec;
-  }
-  .user-toolbar {
-    padding: 10px;
-    margin: 0px;
-    background: #f2f2f2;
-    .el-form-item {
-      margin-bottom: 0;
-    }
-  }
-
-  .dep-tree {
-    border: none;
-    margin-top: 10px;
-    margin-right: 0px;
-    height: 700px;
-    background: #f2f2f2;
-    overflow: auto;
-  }
 </style>

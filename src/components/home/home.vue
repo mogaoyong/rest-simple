@@ -282,9 +282,11 @@
         // bottom: 0px;
         // left: 230px;
         overflow-y: scroll;
-        padding: 20px 0 0 0;
+        padding: 0 0 0 0;
         .breadcrumb-container {
           //margin-bottom: 15px;
+          height: 40px;
+          border-bottom: 1px solid #d7d7d7;
           .title {
             width: 200px;
             float: left;
@@ -293,6 +295,7 @@
           .breadcrumb-inner {
             float: left;
             padding-left: 10px;
+            line-height: 40px;
           }
         }
         .content-wrapper {

@@ -4,6 +4,7 @@ import App from './App';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';
 // import './assets/theme/theme-green/index.css';
+import 'src/styles/index.scss';
 import router from './router';
 import store from './vuex/store';
 import Vuex from 'vuex';
